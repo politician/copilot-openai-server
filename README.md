@@ -120,4 +120,4 @@ go get github.com/github/copilot-sdk/go
 
 ## License
 
-MIT
+GPL-3.0 License
