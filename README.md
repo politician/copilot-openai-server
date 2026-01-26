@@ -17,7 +17,7 @@ This allows you to use GitHub Copilot's agentic capabilities with any client tha
 ### 1. Build the Server
 
 ```bash
-git clone https://github.com/yourusername/copilot-openai-server.git
+git clone https://github.com/RajatGarga/copilot-openai-server.git
 cd copilot-openai-server
 go build -o copilot-server .
 ```
