@@ -16,6 +16,17 @@ This allows you to use GitHub Copilot's agentic capabilities with any client tha
 
 You can run the server using Docker, which includes the GitHub Copilot CLI.
 
+### Use the published OCI image (recommended)
+
+Images are published to GitHub Container Registry (GHCR).
+
+```bash
+# Default port is 8080
+docker run --rm -e GH_TOKEN=$GH_TOKEN -p 8080:8080 ghcr.io/politician/copilot-openai-server:latest
+```
+
+You can pull a specific version tag (e.g., `v0.1.0`) or use `:latest`.
+
 ### Build the Docker Image
 
 ```bash
