@@ -22,7 +22,7 @@ Images are published to GitHub Container Registry (GHCR).
 
 ```bash
 # Default port is 8080
-docker run --rm -e GH_TOKEN=$GH_TOKEN -p 8080:8080 ghcr.io/politician/copilot-openai-server:latest
+docker run --rm -e COPILOT_GITHUB_TOKEN=$COPILOT_GITHUB_TOKEN -p 8080:8080 ghcr.io/politician/copilot-openai-server:latest
 ```
 
 You can pull a specific version tag (e.g., `v0.1.0`) or use `:latest`.
@@ -38,8 +38,10 @@ docker build -t copilot-openai-server .
 Set your GitHub personal access token with Copilot permissions:
 
 ```bash
-export GH_TOKEN="your_personal_access_token"
-docker run -e GH_TOKEN=$GH_TOKEN -p 8080:8080 copilot-openai-server
+export COPILOT_GITHUB_TOKEN="your_personal_access_token"
+# If you're using GitHub Enterprise, also set GH_HOST to your instance hostname:
+# export GH_HOST="mycompany.ghe.com"
+docker run -e COPILOT_GITHUB_TOKEN=$COPILOT_GITHUB_TOKEN -e GH_HOST=$GH_HOST -p 8080:8080 copilot-openai-server
 ```
 
 **GitHub personal access token (PAT)** must be fine-grained with the `Copilot requests` permission enabled; see https://github.com/github/copilot-cli/issues/91 for details.

@@ -24,9 +24,11 @@ RUN npm install -g @github/copilot
 # Copy the built binary from builder stage
 COPY --from=builder /app/copilot-server /usr/local/bin/copilot-server
 
-# Set environment variable for GitHub token
-# User should provide their personal access token
-ENV GH_TOKEN=""
+# Set environment variables for GitHub token and optional host
+# `COPILOT_GITHUB_TOKEN` should be provided by the user
+# `GH_HOST` can be set to a GitHub Enterprise host (e.g. mycompany.ghe.com)
+ENV COPILOT_GITHUB_TOKEN=""
+ENV GH_HOST=""
 
 # Expose port
 EXPOSE 8080
